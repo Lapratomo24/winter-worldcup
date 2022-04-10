@@ -6,7 +6,6 @@ def opening_title():
     Displays opening title to the terminal
     '''
     print('''
-    
 █░█░█ █▀█ █▀█ █░░ █▀▄   █▀▀ █░█ █▀█   ▀█ █▀█ ▀█ ▀█
 ▀▄▀▄▀ █▄█ █▀▄ █▄▄ █▄▀   █▄▄ █▄█ █▀▀   █▄ █▄█ █▄ █▄\n''')
 

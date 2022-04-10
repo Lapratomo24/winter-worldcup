@@ -30,11 +30,13 @@ fixture_f = SHEET.worksheet('fixture_f')
 fixture_g = SHEET.worksheet('fixture_g')
 fixture_h = SHEET.worksheet('fixture_h')
 
+
 def clear_terminal():
     '''
     Clears the terminal
     '''
     os.system('clear')
+
 
 def menu():
     '''
@@ -45,8 +47,7 @@ def menu():
         cyan_colored("Please choose one of the options:\n")
         print()
         print("(𝕒) Wᴏʀʟᴅ Cᴜᴘ Vᴇɴᴜᴇs")
-        print("(𝕓) Wᴏʀʟᴅ Cᴜᴘ Gʀᴏᴜᴘs")
-        print("(𝕔) Wᴏʀʟᴅ Cᴜᴘ Fɪxᴛᴜʀᴇs")
+        print("(b) Wᴏʀʟᴅ Cᴜᴘ Gʀᴏᴜᴘs & Fɪxᴛᴜʀᴇs")
         print()
         user_input = input("")
 
@@ -70,19 +71,11 @@ def menu():
         print("Now loading...")
         time.sleep(1)
         print()
-        print("Taking you to list of groups for the tournament...")
-        time.sleep(2)
-        clear_terminal()
-        view_groups()
-    if user_input == ("c"):
-        print()
-        print("Now loading...")
-        time.sleep(1)
-        print()
         print("Taking you to upcoming fixtures for FIFA World Cup 2022...")
         time.sleep(2)
         clear_terminal()
         view_fixtures_to_pick()
+
 
 def validate_input(values):
     """
@@ -91,13 +84,14 @@ def validate_input(values):
     """
     try:
         [value for value in values]
-        if values not in {"a", "b", "c", "d"}:
+        if values not in {"a", "b", "c"}:
             raise ValueError("Choose one of the options")
     except ValueError as e:
         print(f'Invalid data: {e}.\n')
         return False
     
     return True
+
 
 def view_venues():
     '''
@@ -107,13 +101,6 @@ def view_venues():
     print(tabulate(venues_list, headers="firstrow", tablefmt="rst"))
     print()
 
-def view_groups():
-    '''
-    Displays groups data from worksheet
-    '''
-    groups_list = groups.get_all_values()
-    print(tabulate(groups_list, headers="firstrow", tablefmt="rst"))
-    print()
 
 def view_fixtures_to_pick():
     '''
@@ -140,6 +127,7 @@ def view_fixtures_to_pick():
             break
     
     if user_input == ("a"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -149,6 +137,7 @@ def view_fixtures_to_pick():
         clear_terminal()
         view_fixture_a()
     if user_input == ("b"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -158,6 +147,7 @@ def view_fixtures_to_pick():
         clear_terminal()
         view_fixture_b()
     if user_input == ("c"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -167,6 +157,7 @@ def view_fixtures_to_pick():
         clear_terminal()
         view_fixture_c()
     if user_input == ("d"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -176,6 +167,7 @@ def view_fixtures_to_pick():
         clear_terminal()
         view_fixture_d()
     if user_input == ("e"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -183,8 +175,9 @@ def view_fixtures_to_pick():
         print("Taking you to Group E fixtures...")
         time.sleep(2)
         clear_terminal()
-        view_fixture_3()
+        view_fixture_e()
     if user_input == ("f"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -194,6 +187,7 @@ def view_fixtures_to_pick():
         clear_terminal()
         view_fixture_f()
     if user_input == ("g"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -203,6 +197,7 @@ def view_fixtures_to_pick():
         clear_terminal()
         view_fixture_g()
     if user_input == ("h"):
+        clear_terminal()
         print()
         print("Now loading...")
         time.sleep(1)
@@ -218,63 +213,70 @@ def view_fixture_a():
     Displays group a fixtures from worksheet
     '''
     display_fixture_a = fixture_a.get_all_values()
-    print(tabulate(display_fixture_a, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_a, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_b():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_b = fixture_b.get_all_values()
-    print(tabulate(display_fixture_b, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_b, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_c():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_c = fixture_c.get_all_values()
-    print(tabulate(display_fixture_c, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_c, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_d():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_d = fixture_d.get_all_values()
-    print(tabulate(display_fixture_d, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_d, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_e():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_e = fixture_e.get_all_values()
-    print(tabulate(display_fixture_e, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_e, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_f():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_f = fixture_f.get_all_values()
-    print(tabulate(display_fixture_f, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_f, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_g():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_g = fixture_g.get_all_values()
-    print(tabulate(display_fixture_g, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_g, headers="firstrow", tablefmt="fancy_grid"))
     print()
+
 
 def view_fixture_h():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_h = fixture_h.get_all_values()
-    print(tabulate(display_fixture_h, headers="firstrow", tablefmt="rst"))
+    print(tabulate(display_fixture_h, headers="firstrow", tablefmt="fancy_grid"))
     print()
 
 
