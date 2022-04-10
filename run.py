@@ -6,7 +6,7 @@ import os
 import time
 
 from strings import opening_title, closing_remark
-from strings import cyan_colored
+from strings import cyan_colored, red_colored
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -42,21 +42,47 @@ def menu():
     '''
     while True:
         cyan_colored(f'Hello {name}, and welcome!\n')
-        cyan_colored("Please choose one of the options below:\n")
+        cyan_colored("Please choose one of the options:\n")
         print()
-        print("(a) World Cup Venues")
-        print("(b) World Cup Groups")
-        print("(c) World Cup Fixtures")
+        print("(𝕒) Wᴏʀʟᴅ Cᴜᴘ Vᴇɴᴜᴇs")
+        print("(𝕓) Wᴏʀʟᴅ Cᴜᴘ Gʀᴏᴜᴘs")
+        print("(𝕔) Wᴏʀʟᴅ Cᴜᴘ Fɪxᴛᴜʀᴇs")
         print()
         user_input = input("")
 
         if validate_input(user_input):
             print("Right on!")
-            time.sleep(2)
+            time.sleep(1)
             clear_terminal()
             break
     
-    return user_input
+    if user_input == ("a"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to list of venues in Qatar...")
+        time.sleep(2)
+        clear_terminal()
+        view_venues()
+    if user_input == ("b"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to list of groups for the tournament...")
+        time.sleep(2)
+        clear_terminal()
+        view_groups()
+    if user_input == ("c"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to upcoming fixtures for FIFA World Cup 2022...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixtures_to_pick()
 
 def validate_input(values):
     """
@@ -66,7 +92,7 @@ def validate_input(values):
     try:
         [value for value in values]
         if values not in {"a", "b", "c", "d"}:
-            raise ValueError("Choose one of the above options")
+            raise ValueError("Choose one of the options")
     except ValueError as e:
         print(f'Invalid data: {e}.\n')
         return False
@@ -77,24 +103,122 @@ def view_venues():
     '''
     Displays venue data from worksheet
     '''
-    display_venues = venues.get_all_values()
-    print(tabulate(venues, headers, tablefmt="rst"))
+    venues_list = venues.get_all_values()
+    print(tabulate(venues_list, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_groups():
     '''
     Displays groups data from worksheet
     '''
-    display_groups = groups.get_all_values()
-    print(tabulate(groups, headers, tablefmt="rst"))
+    groups_list = groups.get_all_values()
+    print(tabulate(groups_list, headers="firstrow", tablefmt="rst"))
     print()
+
+def view_fixtures_to_pick():
+    '''
+    Displays all group fixtures for World Cup 2022
+    '''
+    while True:
+        print()
+        cyan_colored("Please choose from one of the groups:\n")
+        print()
+        print("(𝕒) Gʀᴏᴜᴘ A")
+        print("(𝕓) Gʀᴏᴜᴘ B")
+        print("(𝕔) Gʀᴏᴜᴘ C")
+        print("(𝕕) Gʀᴏᴜᴘ D")
+        print("(𝕖) Gʀᴏᴜᴘ E")
+        print("(𝕗) Gʀᴏᴜᴘ F")
+        print("(𝕘) Gʀᴏᴜᴘ G")
+        print("(𝕙) Gʀᴏᴜᴘ H")
+        print()
+        user_input = input("")
+        print()
+        if user_input not in {"a", "b", "c", "d", "e", "f", "g", "h"}:
+            red_colored("Invalid input. Choose from one of the options.")
+        else:
+            break
+    
+    if user_input == ("a"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group A fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_a()
+    if user_input == ("b"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group B fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_b()
+    if user_input == ("c"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group C fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_c()
+    if user_input == ("d"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group D fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_d()
+    if user_input == ("e"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group E fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_3()
+    if user_input == ("f"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group F fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_f()
+    if user_input == ("g"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group G fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_g()
+    if user_input == ("h"):
+        print()
+        print("Now loading...")
+        time.sleep(1)
+        print()
+        print("Taking you to Group H fixtures...")
+        time.sleep(2)
+        clear_terminal()
+        view_fixture_h()
+
 
 def view_fixture_a():
     '''
     Displays group a fixtures from worksheet
     '''
     display_fixture_a = fixture_a.get_all_values()
-    print(tabulate(fixture_a, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_a, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_b():
@@ -102,7 +226,7 @@ def view_fixture_b():
     Displays group a fixtures from worksheet
     '''
     display_fixture_b = fixture_b.get_all_values()
-    print(tabulate(fixture_b, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_b, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_c():
@@ -110,7 +234,7 @@ def view_fixture_c():
     Displays group a fixtures from worksheet
     '''
     display_fixture_c = fixture_c.get_all_values()
-    print(tabulate(fixture_c, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_c, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_d():
@@ -118,7 +242,7 @@ def view_fixture_d():
     Displays group a fixtures from worksheet
     '''
     display_fixture_d = fixture_d.get_all_values()
-    print(tabulate(fixture_d, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_d, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_e():
@@ -126,7 +250,7 @@ def view_fixture_e():
     Displays group a fixtures from worksheet
     '''
     display_fixture_e = fixture_e.get_all_values()
-    print(tabulate(fixture_e, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_e, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_f():
@@ -134,7 +258,7 @@ def view_fixture_f():
     Displays group a fixtures from worksheet
     '''
     display_fixture_f = fixture_f.get_all_values()
-    print(tabulate(fixture_f, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_f, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_g():
@@ -142,7 +266,7 @@ def view_fixture_g():
     Displays group a fixtures from worksheet
     '''
     display_fixture_g = fixture_g.get_all_values()
-    print(tabulate(fixture_g, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_g, headers="firstrow", tablefmt="rst"))
     print()
 
 def view_fixture_h():
@@ -150,22 +274,15 @@ def view_fixture_h():
     Displays group a fixtures from worksheet
     '''
     display_fixture_h = fixture_h.get_all_values()
-    print(tabulate(fixture_h, headers, tablefmt="rst"))
+    print(tabulate(display_fixture_h, headers="firstrow", tablefmt="rst"))
     print()
 
-#if user_input == "a":
-        #print("Now loading...")
-        #time.sleep(2)
-        #print("Taking you to the tournament venues in Qatar...")
-        #time.sleep(1)
-        #clear_terminal()
 
 
 opening_title()
 cyan_colored("The first ever Winter World Cup Is Coming..\n")
-name = input("Type in your name then press Enter:\n")
+name = input("Type in your name then press Enter:\n\n")
 time.sleep(2)
 clear_terminal()
 menu()
-closing_remark()
 

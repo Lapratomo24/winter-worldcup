@@ -28,3 +28,10 @@ def cyan_colored(text):
     '''
     colored = f"\033[36;1m{text}\033[0m"
     print(colored)
+
+def red_colored(text):
+    """
+    Prints text in red
+    """
+    colored = f"\033[31m{text}\033[0m"
+    print(colored)
