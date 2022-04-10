@@ -17,9 +17,9 @@ def closing_remark():
     '''
     print('''
                          ___
- o__        o__     |   |\
-/|          /\      |   |X\
-/ > o        <\     |   |XX\\n''')
+ o__        o__     |   |\\
+/|          /\      |   |X\\
+/ > o        <\     |   |XX\\\n''')
 
 
 def cyan_colored(text):

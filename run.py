@@ -2,6 +2,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
 import random
+import os
+import time
 
 from strings import opening_title, closing_remark
 from strings import cyan_colored
@@ -28,5 +30,16 @@ fixture_f = SHEET.worksheet('fixture_f')
 fixture_g = SHEET.worksheet('fixture_g')
 fixture_h = SHEET.worksheet('fixture_h')
 
+def clear_terminal():
+    '''
+    Clears the terminal
+    '''
+    os.system('clear')
+
 opening_title()
-print(cyan_colored("Winter World Cup Is Coming".center(80)))
+print(cyan_colored("The first ever Winter World Cup Is Coming..\n"))
+name = input("Type in your name then press Enter:\n")
+time.sleep(2)
+clear_terminal()
+closing_remark()
+
