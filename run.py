@@ -20,7 +20,6 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('winter_world_cup')
 
 venues = SHEET.worksheet('venues')
-groups = SHEET.worksheet('groups')
 fixture_a = SHEET.worksheet('fixture_a')
 fixture_b = SHEET.worksheet('fixture_b')
 fixture_c = SHEET.worksheet('fixture_c')
@@ -219,7 +218,7 @@ def view_fixture_a():
 
 def view_fixture_b():
     '''
-    Displays group a fixtures from worksheet
+    Displays group b fixtures from worksheet
     '''
     display_fixture_b = fixture_b.get_all_values()
     print(tabulate(display_fixture_b, headers="firstrow", tablefmt="fancy_grid"))
@@ -228,7 +227,7 @@ def view_fixture_b():
 
 def view_fixture_c():
     '''
-    Displays group a fixtures from worksheet
+    Displays group c fixtures from worksheet
     '''
     display_fixture_c = fixture_c.get_all_values()
     print(tabulate(display_fixture_c, headers="firstrow", tablefmt="fancy_grid"))
@@ -237,7 +236,7 @@ def view_fixture_c():
 
 def view_fixture_d():
     '''
-    Displays group a fixtures from worksheet
+    Displays group d fixtures from worksheet
     '''
     display_fixture_d = fixture_d.get_all_values()
     print(tabulate(display_fixture_d, headers="firstrow", tablefmt="fancy_grid"))
@@ -246,7 +245,7 @@ def view_fixture_d():
 
 def view_fixture_e():
     '''
-    Displays group a fixtures from worksheet
+    Displays group e fixtures from worksheet
     '''
     display_fixture_e = fixture_e.get_all_values()
     print(tabulate(display_fixture_e, headers="firstrow", tablefmt="fancy_grid"))
@@ -255,7 +254,7 @@ def view_fixture_e():
 
 def view_fixture_f():
     '''
-    Displays group a fixtures from worksheet
+    Displays group f fixtures from worksheet
     '''
     display_fixture_f = fixture_f.get_all_values()
     print(tabulate(display_fixture_f, headers="firstrow", tablefmt="fancy_grid"))
@@ -264,7 +263,7 @@ def view_fixture_f():
 
 def view_fixture_g():
     '''
-    Displays group a fixtures from worksheet
+    Displays group g fixtures from worksheet
     '''
     display_fixture_g = fixture_g.get_all_values()
     print(tabulate(display_fixture_g, headers="firstrow", tablefmt="fancy_grid"))
@@ -273,12 +272,11 @@ def view_fixture_g():
 
 def view_fixture_h():
     '''
-    Displays group a fixtures from worksheet
+    Displays group h fixtures from worksheet
     '''
     display_fixture_h = fixture_h.get_all_values()
     print(tabulate(display_fixture_h, headers="firstrow", tablefmt="fancy_grid"))
     print()
-
 
 
 opening_title()
