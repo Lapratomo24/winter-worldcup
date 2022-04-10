@@ -42,7 +42,7 @@ def menu():
     '''
     while True:
         cyan_colored(f'Hello {name}, and welcome!\n')
-        cyan_colored("Please choose one of the options below:?\n")
+        cyan_colored("Please choose one of the options below:\n")
         print()
         print("(a) World Cup Venues")
         print("(b) World Cup Groups")
@@ -72,6 +72,86 @@ def validate_input(values):
         return False
     
     return True
+
+def view_venues():
+    '''
+    Displays venue data from worksheet
+    '''
+    display_venues = venues.get_all_values()
+    print(tabulate(venues, headers, tablefmt="rst"))
+    print()
+
+def view_groups():
+    '''
+    Displays groups data from worksheet
+    '''
+    display_groups = groups.get_all_values()
+    print(tabulate(groups, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_a():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_a = fixture_a.get_all_values()
+    print(tabulate(fixture_a, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_b():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_b = fixture_b.get_all_values()
+    print(tabulate(fixture_b, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_c():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_c = fixture_c.get_all_values()
+    print(tabulate(fixture_c, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_d():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_d = fixture_d.get_all_values()
+    print(tabulate(fixture_d, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_e():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_e = fixture_e.get_all_values()
+    print(tabulate(fixture_e, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_f():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_f = fixture_f.get_all_values()
+    print(tabulate(fixture_f, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_g():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_g = fixture_g.get_all_values()
+    print(tabulate(fixture_g, headers, tablefmt="rst"))
+    print()
+
+def view_fixture_h():
+    '''
+    Displays group a fixtures from worksheet
+    '''
+    display_fixture_h = fixture_h.get_all_values()
+    print(tabulate(fixture_h, headers, tablefmt="rst"))
+    print()
 
 #if user_input == "a":
         #print("Now loading...")
