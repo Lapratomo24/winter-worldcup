@@ -36,10 +36,56 @@ def clear_terminal():
     '''
     os.system('clear')
 
+def menu():
+    '''
+    Displays main menu to the user
+    '''
+    while True:
+        cyan_colored(f'Hello {name}, and welcome!\n')
+        cyan_colored("Please choose one of the options below:?\n")
+        print()
+        print("(a) World Cup Venues")
+        print("(b) World Cup Groups")
+        print("(c) World Cup Fixtures")
+        print()
+        user_input = input("")
+
+        if validate_input(user_input):
+            print("Right on!")
+            time.sleep(2)
+            clear_terminal()
+            break
+    
+    return user_input
+
+def validate_input(values):
+    """
+    Validates user input, 
+    which otherwise raises Error
+    """
+    try:
+        [value for value in values]
+        if values not in {"a", "b", "c", "d"}:
+            raise ValueError("Choose one of the above options")
+    except ValueError as e:
+        print(f'Invalid data: {e}.\n')
+        return False
+    
+    return True
+
+#if user_input == "a":
+        #print("Now loading...")
+        #time.sleep(2)
+        #print("Taking you to the tournament venues in Qatar...")
+        #time.sleep(1)
+        #clear_terminal()
+
+
 opening_title()
-print(cyan_colored("The first ever Winter World Cup Is Coming..\n"))
+cyan_colored("The first ever Winter World Cup Is Coming..\n")
 name = input("Type in your name then press Enter:\n")
 time.sleep(2)
 clear_terminal()
+menu()
 closing_remark()
 
