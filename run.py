@@ -1,13 +1,11 @@
+import random
+import time
+import os
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
-import random
-import os
-import time
 
-from strings import show_opening_title, show_closing_remark, cyan_colored, red_colored
-
-GROUP_NAMES = ["a", "b", "c", "d", "e", "f", "g", "h"]
+from strings import show_opening_title, cyan_colored, red_colored
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,6 +17,8 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('winter_world_cup')
+
+GROUP_NAMES = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
 venues = SHEET.worksheet('venues')
 
@@ -127,7 +127,7 @@ def view_fixtures_to_pick():
 
 def view_fixture(group_name):
     '''
-    Displays group a fixtures from worksheet
+    Displays group fixtures from worksheet
     '''
     fixture_sheet = SHEET.worksheet('fixture_' + group_name)
     display_fixture = fixture_sheet.get_all_values()
@@ -136,7 +136,10 @@ def view_fixture(group_name):
     return_to_menu()
 
 
-def take_user_name():
+def name_input():
+    '''
+    Takes user name input
+    '''
     try:
         name = input("Type in your name then press Enter:\n\n")
         if not name:
@@ -145,13 +148,16 @@ def take_user_name():
             cyan_colored(f'Hello {name}, and welcome!\n')
     except ValueError:
         print('Please enter a valid name')
-        take_user_name()
+        name_input()
 
 
 def main():
+    '''
+    Runs all functions
+    '''
     show_opening_title()
     cyan_colored("The first ever Winter World Cup Is Coming..\n")
-    take_user_name()
+    name_input()
     clear_terminal()
     show_menu()
 

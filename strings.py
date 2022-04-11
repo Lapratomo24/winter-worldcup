@@ -1,14 +1,16 @@
 import colorama
 colorama.init()
 
+title = '''
+█░█░█ █▀█ █▀█ █░░ █▀▄   █▀▀ █░█ █▀█   ▀█ █▀█ ▀█ ▀█
+▀▄▀▄▀ █▄█ █▀▄ █▄▄ █▄▀   █▄▄ █▄█ █▀▀   █▄ █▄█ █▄ █▄'''
+
 
 def show_opening_title():
     '''
     Displays opening title to the terminal
     '''
-    print('''
-█░█░█ █▀█ █▀█ █░░ █▀▄   █▀▀ █░█ █▀█   ▀█ █▀█ ▀█ ▀█
-▀▄▀▄▀ █▄█ █▀▄ █▄▄ █▄▀   █▄▄ █▄█ █▀▀   █▄ █▄█ █▄ █▄\n''')
+    print('\n'.join(title.center(80) for title in title.splitlines()))
 
 
 def show_closing_remark():
@@ -28,6 +30,7 @@ def cyan_colored(text):
     '''
     colored = f"\033[36;1m{text}\033[0m"
     print(colored)
+
 
 def red_colored(text):
     """
