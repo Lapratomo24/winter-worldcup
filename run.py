@@ -45,14 +45,15 @@ def menu():
         cyan_colored(f'Hello {name}, and welcome!\n')
         cyan_colored("Please choose one of the options:\n")
         print()
-        print("(𝕒) Wᴏʀʟᴅ Cᴜᴘ Vᴇɴᴜᴇs")
-        print("(b) Wᴏʀʟᴅ Cᴜᴘ Gʀᴏᴜᴘs & Fɪxᴛᴜʀᴇs")
+        print("(a) World Cup Venues")
+        print("(b) World Cup Groups & Fixtures")
         print()
         user_input = input("")
 
         if validate_input(user_input):
-            print("Right on!")
-            time.sleep(1)
+            print()
+            print("Redirecting..!")
+            time.sleep(2)
             clear_terminal()
             break
     
@@ -76,6 +77,31 @@ def menu():
         view_fixtures_to_pick()
 
 
+def return_to_menu():
+    '''
+    Displays the option to navigate back to main menu
+    '''
+    while True:
+        print()
+        print("Press m then enter to return to main menu")
+        print()
+        user_input = input('')
+
+        if validate_input(user_input):
+            print()
+            print("Redirecting you back to main menu..!")
+            time.sleep(2)
+            clear_terminal()
+            break
+    
+    if user_input == ("m"):
+        print()
+        print("Now loading...")
+        time.sleep(2)
+        clear_terminal()
+        menu()
+
+
 def validate_input(values):
     """
     Validates user input, 
@@ -83,10 +109,10 @@ def validate_input(values):
     """
     try:
         [value for value in values]
-        if values not in {"a", "b", "c"}:
-            raise ValueError("Choose one of the options")
+        if values not in {"a", "b", "c", "m"}:
+            raise ValueError("Please try again.")
     except ValueError as e:
-        print(f'Invalid data: {e}.\n')
+        print(f'Invalid input: {e}.\n')
         return False
     
     return True
@@ -99,6 +125,7 @@ def view_venues():
     venues_list = venues.get_all_values()
     print(tabulate(venues_list, headers="firstrow", tablefmt="rst"))
     print()
+    return_to_menu()
 
 
 def view_fixtures_to_pick():
@@ -109,14 +136,14 @@ def view_fixtures_to_pick():
         print()
         cyan_colored("Please choose from one of the groups:\n")
         print()
-        print("(𝕒) Gʀᴏᴜᴘ A")
-        print("(𝕓) Gʀᴏᴜᴘ B")
-        print("(𝕔) Gʀᴏᴜᴘ C")
-        print("(𝕕) Gʀᴏᴜᴘ D")
-        print("(𝕖) Gʀᴏᴜᴘ E")
-        print("(𝕗) Gʀᴏᴜᴘ F")
-        print("(𝕘) Gʀᴏᴜᴘ G")
-        print("(𝕙) Gʀᴏᴜᴘ H")
+        print("(a) Group A")
+        print("(b) Group B")
+        print("(c) Group C")
+        print("(d) Group D")
+        print("(e) Group E")
+        print("(f) Group F")
+        print("(g) Group G")
+        print("(h) Group H")
         print()
         user_input = input("")
         print()
@@ -212,8 +239,9 @@ def view_fixture_a():
     Displays group a fixtures from worksheet
     '''
     display_fixture_a = fixture_a.get_all_values()
-    print(tabulate(display_fixture_a, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_a, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_b():
@@ -221,8 +249,9 @@ def view_fixture_b():
     Displays group b fixtures from worksheet
     '''
     display_fixture_b = fixture_b.get_all_values()
-    print(tabulate(display_fixture_b, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_b, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_c():
@@ -230,8 +259,9 @@ def view_fixture_c():
     Displays group c fixtures from worksheet
     '''
     display_fixture_c = fixture_c.get_all_values()
-    print(tabulate(display_fixture_c, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_c, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_d():
@@ -239,8 +269,9 @@ def view_fixture_d():
     Displays group d fixtures from worksheet
     '''
     display_fixture_d = fixture_d.get_all_values()
-    print(tabulate(display_fixture_d, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_d, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_e():
@@ -248,8 +279,9 @@ def view_fixture_e():
     Displays group e fixtures from worksheet
     '''
     display_fixture_e = fixture_e.get_all_values()
-    print(tabulate(display_fixture_e, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_e, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_f():
@@ -257,8 +289,9 @@ def view_fixture_f():
     Displays group f fixtures from worksheet
     '''
     display_fixture_f = fixture_f.get_all_values()
-    print(tabulate(display_fixture_f, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_f, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_g():
@@ -266,8 +299,9 @@ def view_fixture_g():
     Displays group g fixtures from worksheet
     '''
     display_fixture_g = fixture_g.get_all_values()
-    print(tabulate(display_fixture_g, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_g, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 def view_fixture_h():
@@ -275,8 +309,9 @@ def view_fixture_h():
     Displays group h fixtures from worksheet
     '''
     display_fixture_h = fixture_h.get_all_values()
-    print(tabulate(display_fixture_h, headers="firstrow", tablefmt="fancy_grid"))
+    print(tabulate(display_fixture_h, headers="firstrow", tablefmt="github"))
     print()
+    return_to_menu()
 
 
 opening_title()
