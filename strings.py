@@ -1,7 +1,8 @@
 import colorama
 colorama.init()
 
-def opening_title():
+
+def show_opening_title():
     '''
     Displays opening title to the terminal
     '''
@@ -10,7 +11,7 @@ def opening_title():
 ▀▄▀▄▀ █▄█ █▀▄ █▄▄ █▄▀   █▄▄ █▄█ █▀▀   █▄ █▄█ █▄ █▄\n''')
 
 
-def closing_remark():
+def show_closing_remark():
     '''
     Displays closing remark with a soccer ball art
     '''
