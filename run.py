@@ -156,7 +156,7 @@ def main():
     Runs all functions
     '''
     show_opening_title()
-    cyan_colored("The first ever Winter World Cup Is Coming..\n")
+    cyan_colored("\nThe first ever Winter World Cup Is Coming..\n")
     name_input()
     clear_terminal()
     show_menu()
