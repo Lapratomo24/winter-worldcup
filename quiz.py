@@ -1,10 +1,19 @@
-quizzes = [
-    "How many teams participate in the 2022 World Cup?\n \
+class Trivia:
+    '''
+    Stores questions and answers
+    '''
+    def __init__(self, question, answer):
+        self.question = question
+        self.answer = answer
+
+
+trivia_quizzes = [
+    "How many teams participate in the FIFA 2022 World Cup?\n \
      (a) 48\n \
      (b) 32\n \
      (c) 24\n",
      
-    "Which nation(s) will be the host(s) of the 2026 World Cup?\n \
+    "Which nation(s) will be the host(s) of the FIFA 2026 World Cup?\n \
      (a) Indonesia\n \
      (b) Morocco\n \
      (c) USA, Canada, Mexico\n",
