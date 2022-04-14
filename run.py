@@ -6,7 +6,7 @@ from google.oauth2.service_account import Credentials
 from tabulate import tabulate
 
 from strings import show_opening_title
-from strings import cyan_colored, red_colored, green_colored
+from strings import cyan_colored, red_colored, green_colored, quiz_header
 from quiz import Trivia, trivia_quizzes
 
 
@@ -24,6 +24,21 @@ SHEET = GSPREAD_CLIENT.open('winter_world_cup')
 GROUP_FIXTURES = ["a", "b", "c", "d", "e", "f", "g", "h"]
 leaderboard = SHEET.worksheet('leaderboard')
 venues = SHEET.worksheet('venues')
+
+quiz_list = [
+    Trivia(trivia_quizzes[0], "b"),
+    Trivia(trivia_quizzes[1], "c"),
+    Trivia(trivia_quizzes[2], "a"),
+    Trivia(trivia_quizzes[3], "c"),
+    Trivia(trivia_quizzes[4], "c"),
+    Trivia(trivia_quizzes[5], "a"),
+    Trivia(trivia_quizzes[6], "b"),
+    Trivia(trivia_quizzes[7], "b"),
+    Trivia(trivia_quizzes[8], "c"),
+    Trivia(trivia_quizzes[9], "a"),
+    Trivia(trivia_quizzes[10], "b"),
+    Trivia(trivia_quizzes[11], "a"),
+]
 
 
 def clear_terminal():
@@ -62,7 +77,7 @@ def show_menu():
     if user_input == ("c"):
         print("Ready to put your knowledge to the test?")
         clear_terminal()
-        view_trivia_quiz(quiz_list)
+        view_quiz_instruction()
 
 
 def return_to_menu():
@@ -92,7 +107,7 @@ def validate_input(input_value):
     input_value = input_value.lower()
     try:
         [value for value in input_value]
-        if input_value not in {"a", "b", "c", "m"}:
+        if input_value not in {"a", "b", "c", "m", "s"}:
             raise ValueError("Please try again.")
     except ValueError as e:
         print(f'Invalid input: {e}.\n')
@@ -132,7 +147,6 @@ def view_fixtures_to_pick():
     clear_terminal()
     view_fixture(group_input)
 
-def
 
 def view_fixture(group_name):
     '''
@@ -145,31 +159,40 @@ def view_fixture(group_name):
     return_to_menu()
 
 
-quiz_list = [
-    Trivia(trivia_quizzes[0], "b"),
-    Trivia(trivia_quizzes[1], "c"),
-    Trivia(trivia_quizzes[2], "a"),
-    Trivia(trivia_quizzes[3], "c"),
-    Trivia(trivia_quizzes[4], "c"),
-    Trivia(trivia_quizzes[5], "a"),
-    Trivia(trivia_quizzes[6], "b"),
-    Trivia(trivia_quizzes[7], "b"),
-    Trivia(trivia_quizzes[8], "c"),
-    Trivia(trivia_quizzes[9], "a"),
-    Trivia(trivia_quizzes[10], "b"),
-    Trivia(trivia_quizzes[11], "a"),
-]
-
-
-def view_trivia_quiz(quiz_list):
+def view_quiz_instruction():
     '''
-    Displays the questions and counts total score from user
+    Displays simple instruction for the quiz to the user
+    '''
+    print()
+    quiz_header()
+    print(3*"\n")
+    print("Let's test your knowledge for a bit, shall we? ;)\n\n".center(80))
+    print("There are 10 questions for you to answer.\n".center(80))
+    print("You get 10 points for each correct answer.\n\n".center(80))
+    while True:
+        print("Press s to start when you're ready, and Good Luck!\n".center(80))
+        user_input = input(''.center(40))
+
+        if validate_input(user_input):
+            print("Redirecting...")
+            clear_terminal()
+            break
+
+    if user_input == "s":
+        print("\nLoading the quiz...")
+        clear_terminal()
+        view_trivia_quiz()
+
+
+def view_trivia_quiz():
+    '''
+    Displays the questions and counts total score achieved by the user
     '''
     score = 0
     correct = 0
     incorrect = 0
-    random.shuffle(quiz_list)
-    for quiz in quiz_list:
+    selected_questions = random.sample(quiz_list, 10)
+    for quiz in selected_questions:
         while True:
             user_answers = input(quiz.question).lower()
             if user_answers not in {"a", "b", "c"}:

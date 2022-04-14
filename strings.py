@@ -11,6 +11,17 @@ def show_opening_title():
 ▀▄▀▄▀ █▄█ █▀▄ █▄▄ █▄▀   █▄▄ █▄█ █▀▀   █▄ █▄█ █▄ █▄''')
 
 
+def quiz_header():
+    '''
+    Displays header for trivia quiz
+    '''
+    header = '''
+    
+█░█░█ █▀█ █▀█ █░░ █▀▄   █▀▀ █░█ █▀█   ▀█▀ █▀█ █ █░█ █ ▄▀█   █▀█ █░█ █ ▀█
+▀▄▀▄▀ █▄█ █▀▄ █▄▄ █▄▀   █▄▄ █▄█ █▀▀   ░█░ █▀▄ █ ▀▄▀ █ █▀█   ▀▀█ █▄█ █ █▄'''
+    print('\n'.join(header.center(80) for header in header.splitlines()))
+
+
 def show_closing_remark():
     '''
     Displays closing remark with a soccer ball art
