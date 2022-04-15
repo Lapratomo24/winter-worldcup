@@ -5,7 +5,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
 
-from strings import show_opening_title
+from strings import show_opening_title, leaderboard_message
 from strings import cyan_colored, red_colored, green_colored, quiz_header
 from quiz import Trivia, trivia_quizzes
 
@@ -146,6 +146,7 @@ def view_groups():
         cyan_colored("\nPlease choose from one of the groups:\n")
         for group in groups:
             print("(" + group + ") Group " + group.upper())
+            print()
 
         group_input = input("").lower()
         if group_input not in groups:
@@ -181,6 +182,7 @@ def view_fixtures_to_pick():
         cyan_colored("\nPlease choose from one of the groups:\n")
         for group in groups:
             print("(" + group + ") Group " + group.upper())
+            print()
 
         group_input = input("").lower()
         if group_input not in groups:
@@ -262,6 +264,21 @@ def view_trivia_quiz():
     red_colored(f'{incorrect} incorrect answers.')
     print()
     print(f'Your total score: {score}')
+    print("\nEnter your name to see it on the leaderboard:\n")
+    name = input("")
+    leaderboard.append_row(values=[name, correct, incorrect, score])
+    clear_terminal()
+    view_leaderboard()
+
+
+def view_leaderboard():
+    '''
+    Displays a simple leaderboard to show total scores for trivia quiz
+    '''
+    leaderboard_message()
+    print()
+    participants = leaderboard.get_all_values()
+    print(tabulate(participants, tablefmt="simple"))
     print()
     return_to_menu()
 

@@ -22,6 +22,13 @@ def quiz_header():
     print('\n'.join(header.center(80) for header in header.splitlines()))
 
 
+def leaderboard_message():
+    '''
+    Display trophy art above leaderboard
+    '''
+    print("\n𝕥𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕡𝕒𝕣𝕥𝕚𝕔𝕚𝕡𝕒𝕥𝕚𝕟𝕘❕")
+
+
 def show_closing_remark():
     '''
     Displays closing remark with a soccer ball art
