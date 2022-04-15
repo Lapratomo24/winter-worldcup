@@ -4,8 +4,10 @@ import os
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
+from colorama import Fore
 
 from strings import show_opening_title, leaderboard_message
+from strings import venues_header, group_header, fixture_header
 from strings import cyan_colored, red_colored, green_colored, quiz_header
 from quiz import Trivia, trivia_quizzes
 
@@ -67,7 +69,7 @@ def show_menu():
             clear_terminal()
             break
 
-    print("\nNow loading...\n")
+    print("Now loading...\n")
     if user_input == ("a"):
         print("Taking you to the list of venues in Qatar...")
         time.sleep(2)
@@ -120,9 +122,10 @@ def validate_input(input_value):
     try:
         [value for value in input_value]
         if input_value not in {"a", "b", "c", "d", "m", "s"}:
-            raise ValueError("Please try again.")
+            raise ValueError("Please try again")
     except ValueError as e:
-        print(f'\nInvalid input: {e}.\n')
+        print(Fore.RED + f'\nInvalid input: {e}.\n')
+        print('\033[39m')
         return False
 
     return True
@@ -132,6 +135,8 @@ def view_venues():
     '''
     Displays venue data from worksheet
     '''
+    venues_header()
+    print()
     venues_list = venues.get_all_values()
     print(tabulate(venues_list, headers="firstrow", tablefmt="rst"))
     print()
@@ -143,14 +148,14 @@ def view_groups():
     Displays all group participating in World Cup 2022
     '''
     while True:
-        cyan_colored("\nPlease choose from one of the groups:\n")
+        cyan_colored("Please choose from one of the groups:\n")
         for group in groups:
             print("(" + group + ") Group " + group.upper())
             print()
 
         group_input = input("").lower()
         if group_input not in groups:
-            red_colored("\nInvalid input. Choose from one of the options.")
+            red_colored("\nInvalid input. Choose from one of the options.\n")
         else:
             break
 
@@ -167,6 +172,8 @@ def view_group_info(group_name):
     '''
     Displays group fixtures from worksheet
     '''
+    group_header()
+    print()
     group_sheet = SHEET.worksheet('group_' + group_name)
     display_group = group_sheet.get_all_values()
     print(tabulate(display_group, headers="firstrow", tablefmt="github"))
@@ -179,14 +186,14 @@ def view_fixtures_to_pick():
     Displays all group fixtures for World Cup 2022
     '''
     while True:
-        cyan_colored("\nPlease choose from one of the groups:\n")
+        cyan_colored("Please choose from one of the groups:\n")
         for group in groups:
             print("(" + group + ") Group " + group.upper())
             print()
 
         group_input = input("").lower()
         if group_input not in groups:
-            red_colored("\nInvalid input. Choose from one of the options.")
+            red_colored("\nInvalid input. Choose from one of the options.\n")
         else:
             break
 
@@ -203,6 +210,8 @@ def view_fixture(group_name):
     '''
     Displays group fixtures from worksheet
     '''
+    fixture_header()
+    print()
     fixture_sheet = SHEET.worksheet('fixture_' + group_name)
     display_fixture = fixture_sheet.get_all_values()
     print(tabulate(display_fixture, headers="firstrow", tablefmt="github"))
@@ -218,8 +227,8 @@ def view_quiz_instruction():
     quiz_header()
     print(3*"\n")
     print("Let's test your knowledge for a bit, shall we? ;)\n\n".center(80))
-    print("There are 10 questions for you to answer.\n".center(80))
-    print("You get 10 points for each correct answer.\n\n".center(80))
+    cyan_colored("There are 10 questions for you to answer.\n".center(80))
+    cyan_colored("You get 10 points for each correct answer.\n\n".center(80))
     while True:
         print("Press s to start when you're ready. Good Luck!\n".center(80))
         user_input = input(''.center(40))
@@ -278,7 +287,7 @@ def view_leaderboard():
     leaderboard_message()
     print()
     participants = leaderboard.get_all_values()
-    print(tabulate(participants, tablefmt="simple"))
+    print(tabulate(participants, headers="firstrow", tablefmt="simple"))
     print()
     return_to_menu()
 
@@ -288,13 +297,15 @@ def name_input():
     Takes user name input
     '''
     try:
-        name = input("Type in your name then press Enter:\n\n")
+        print("Type in your name then press Enter:\n\n".center(80))
+        name = input("".center(35))
         if not name:
             raise ValueError
         else:
-            cyan_colored(f'\nHello {name}, and welcome!\n')
+            cyan_colored(f'\nHello {name}, and welcome!\n'.center(80))
     except ValueError:
-        print('Please enter a valid name')
+        print(Fore.RED + 'Please enter a valid name.\n'.center(80))
+        print('\033[39m')
         name_input()
 
 
@@ -303,13 +314,14 @@ def main():
     Runs all functions
     '''
     show_opening_title()
-    cyan_colored("\n\nThe first ever Winter World Cup Is Coming..\n")
+    print(2*"\n")
+    cyan_colored("The first ever Winter World Cup is coming!".center(80))
+    print(2*"\n")
     name_input()
-    print("Loading...")
+    print("Loading...".center(80))
     time.sleep(1)
     clear_terminal()
     show_menu()
 
 
 main()
-
