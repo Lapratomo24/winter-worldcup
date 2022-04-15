@@ -7,8 +7,8 @@ from google.oauth2.service_account import Credentials
 from tabulate import tabulate
 from colorama import Fore
 
-from strings import show_opening_title, leaderboard_message, show_closing_message
-from strings import venues_header, group_header, fixture_header
+from strings import opening_title, leaderboard_message, closing_message
+from strings import venues_header, group_header, fixture_header, menu_header
 from strings import cyan_colored, red_colored, green_colored, quiz_header
 from quiz import Trivia, trivia_quizzes
 
@@ -56,7 +56,7 @@ def shut_down():
     Shuts down the terminal
     '''
     print(4*"\n")
-    show_closing_message()
+    closing_message()
     time.sleep(2)
     sys.exit()
 
@@ -66,11 +66,14 @@ def show_menu():
     Displays main menu to the user
     '''
     while True:
+        menu_header()
+        print()
         cyan_colored("Please choose one of the options:\n")
         print("\n(a) World Cup Venues\n")
         print("(b) World Cup National Teams\n")
         print("(c) World Cup Fixtures\n")
         print("(d) World Cup Trivia Quiz\n")
+        print("(e) Exit\n")
         user_input = input("")
 
         if validate_input(user_input):
@@ -101,6 +104,8 @@ def show_menu():
         time.sleep(2)
         clear_terminal()
         view_quiz_instruction()
+    if user_input == ("e"):
+        shut_down()
 
 
 def return_to_menu():
@@ -133,7 +138,6 @@ def validate_input(input_value):
     """
     input_value = input_value.lower()
     try:
-        [value for value in input_value]
         if input_value not in {"a", "b", "c", "d", "e", "m", "s"}:
             raise ValueError("Please try again")
     except ValueError as e:
@@ -173,7 +177,7 @@ def view_groups():
             break
 
     clear_terminal()
-    print("\nNow loading...\n")
+    print("Now loading...\n")
     time.sleep(1)
     print("Taking you to Group " + group_input.upper() + "...")
     time.sleep(1)
@@ -211,7 +215,7 @@ def view_fixtures_to_pick():
             break
 
     clear_terminal()
-    print("\nNow loading...\n")
+    print("Now loading...\n")
     time.sleep(1)
     print("Taking you to Group " + group_input.upper() + " fixtures...")
     time.sleep(1)
@@ -244,10 +248,11 @@ def view_quiz_instruction():
     cyan_colored("You get 10 points for each correct answer.\n\n".center(80))
     while True:
         print("Press s to start when you're ready. Good Luck!\n".center(80))
-        user_input = input(''.center(40))
+        user_input = input(''.center(37))
 
         if validate_input(user_input):
-            print("Redirecting...")
+            print()
+            print("Redirecting...".center(80))
             time.sleep(1)
             clear_terminal()
             break
@@ -288,6 +293,7 @@ def view_trivia_quiz():
     print(f'Your total score: {score}')
     print("\nEnter your name to see it on the leaderboard:\n")
     name = input("")
+    time.sleep(1)
     leaderboard.append_row(values=[name, correct, incorrect, score])
     clear_terminal()
     view_leaderboard()
@@ -311,11 +317,13 @@ def name_input():
     '''
     try:
         print("Type in your name then press Enter:\n".center(80))
-        name = input("".center(35))
+        name = input("".center(37))
         if not name:
             raise ValueError
         else:
-            cyan_colored(f'\nHello {name}, and welcome!\n'.center(80))
+            print()
+            cyan_colored(f'Hello {name}, and welcome!'.center(80))
+            print()
     except ValueError:
         print(Fore.RED + 'Please enter a valid name.\n'.center(80))
         print('\033[39m')
@@ -326,14 +334,14 @@ def main():
     '''
     Runs all functions
     '''
-    show_opening_title()
-    print(2*"\n")
+    opening_title()
+    print()
     cyan_colored("The first ever Winter World Cup is coming!".center(80))
-    cyan_colored("Hope you're as excited to watch the games as I am!".center(80))
-    print(2*"\n")
+    cyan_colored("Hope you're as excited to watch it as I am!".center(80))
+    print()
     name_input()
-    print("Loading...".center(80))
-    time.sleep(1)
+    print("Loading main menu...".center(80))
+    time.sleep(2)
     clear_terminal()
     show_menu()
 

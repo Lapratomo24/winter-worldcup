@@ -2,7 +2,7 @@ import colorama
 colorama.init()
 
 
-def show_opening_title():
+def opening_title():
     '''
     Displays opening title to the terminal
     '''
@@ -43,7 +43,7 @@ def leaderboard_message():
 ──────────────────────╚╝───────────╚╝─────────╚═╩╝''')
 
 
-def show_closing_message():
+def closing_message():
     '''
     Displays closing remark with a soccer ball art
     '''
@@ -52,14 +52,30 @@ def show_closing_message():
 ▀█▀ █ █░░ █░░   █▄░█ █▀▀ ▀▄▀ ▀█▀   ▀█▀ █ █▀▄▀█ █▀▀ █
 ░█░ █ █▄▄ █▄▄   █░▀█ ██▄ █░█ ░█░   ░█░ █ █░▀░█ ██▄ ▄'''
     print('\n'.join(title.center(80) for title in title.splitlines()))
-
+    print()
+    ball = '''
+            _...----.._
+     ,:':::::.     `>.
+   ,' |:::::;'     |:::.
+  /    `'::'       :::::\
+ /         _____     `::;\
+:         /:::::\      `  :
+| ,.     /::SSt::\        |
+|;:::.   `::::::;'        |
+::::::     `::;'      ,.  ;
+ \:::'              ,::::/
+  \                 \:::/
+   `.     ,:.        :;'
+     `-.::::::..  _.''
+        ```----```'''
+    print('\n'.join(ball.center(80) for ball in ball.splitlines()))
+        
 
 def venues_header():
     '''
     Displays header for venues
     '''
     print('''
-    
 █░█ █▀▀ █▄░█ █░█ █▀▀ █▀
 ▀▄▀ ██▄ █░▀█ █▄█ ██▄ ▄█''')
 
@@ -69,7 +85,6 @@ def group_header():
     Displays header for groups
     '''
     print('''
-    
 ▀█▀ █▀▀ ▄▀█ █▀▄▀█ █▀
 ░█░ ██▄ █▀█ █░▀░█ ▄█''')
 
@@ -79,9 +94,18 @@ def fixture_header():
     Displays header for fixtures
     '''
     print('''
-    
 █▀▀ █ ▀▄▀ ▀█▀ █░█ █▀█ █▀▀ █▀
 █▀░ █ █░█ ░█░ █▄█ █▀▄ ██▄ ▄█''')
+
+
+def menu_header():
+    '''
+    Displays header for main menu
+    '''
+    print('''
+█▀▄▀█ ▄▀█ █ █▄░█   █▀▄▀█ █▀▀ █▄░█ █░█
+█░▀░█ █▀█ █ █░▀█   █░▀░█ ██▄ █░▀█ █▄█
+    ''')
 
 
 def cyan_colored(text):
