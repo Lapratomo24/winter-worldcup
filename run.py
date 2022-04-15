@@ -112,8 +112,8 @@ def return_to_menu():
     Displays the option to navigate back to main menu
     '''
     while True:
-        print("\nPress m then enter to return to main menu.\n")
-        print("Press e then enter to exit the terminal.\n")
+        cyan_colored("\nPress m then enter to return to main menu.\n")
+        red_colored("Press e then enter to exit the terminal.\n")
         user_input = input('')
 
         if validate_input(user_input):
