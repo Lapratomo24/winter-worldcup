@@ -63,24 +63,29 @@ def show_menu():
         if validate_input(user_input):
             print()
             print("Redirecting...")
+            time.sleep(1)
             clear_terminal()
             break
 
-    print("\nNow loading...")
+    print("\nNow loading...\n")
     if user_input == ("a"):
         print("Taking you to the list of venues in Qatar...")
+        time.sleep(2)
         clear_terminal()
         view_venues()
     if user_input == ("b"):
         print("Taking you to the list of qualified national teams...")
+        time.sleep(2)
         clear_terminal()
         view_groups()
     if user_input == ("c"):
         print("Taking you to the upcoming fixtures of FIFA World Cup 2022...")
+        time.sleep(2)
         clear_terminal()
         view_fixtures_to_pick()
     if user_input == ("d"):
         print("Ready to put your knowledge to the test?")
+        time.sleep(2)
         clear_terminal()
         view_quiz_instruction()
 
@@ -94,12 +99,14 @@ def return_to_menu():
         user_input = input('')
 
         if validate_input(user_input):
-            print("Redirecting you back to main menu...")
+            print("\nRedirecting you back to main menu...")
+            time.sleep(1)
             clear_terminal()
             break
 
     if user_input == "m":
         print("\nNow loading...")
+        time.sleep(1)
         clear_terminal()
         show_menu()
 
@@ -112,10 +119,10 @@ def validate_input(input_value):
     input_value = input_value.lower()
     try:
         [value for value in input_value]
-        if input_value not in {"a", "b", "c", "m", "s"}:
+        if input_value not in {"a", "b", "c", "d", "m", "s"}:
             raise ValueError("Please try again.")
     except ValueError as e:
-        print(f'Invalid input: {e}.\n')
+        print(f'\nInvalid input: {e}.\n')
         return False
 
     return True
@@ -142,13 +149,15 @@ def view_groups():
 
         group_input = input("").lower()
         if group_input not in groups:
-            red_colored("Invalid input. Choose from one of the options.")
+            red_colored("\nInvalid input. Choose from one of the options.")
         else:
             break
 
     clear_terminal()
     print("\nNow loading...\n")
+    time.sleep(1)
     print("Taking you to Group " + group_input.upper() + "...")
+    time.sleep(1)
     clear_terminal()
     view_group_info(group_input)
 
@@ -175,13 +184,15 @@ def view_fixtures_to_pick():
 
         group_input = input("").lower()
         if group_input not in groups:
-            red_colored("Invalid input. Choose from one of the options.")
+            red_colored("\nInvalid input. Choose from one of the options.")
         else:
             break
 
     clear_terminal()
     print("\nNow loading...\n")
+    time.sleep(1)
     print("Taking you to Group " + group_input.upper() + " fixtures...")
+    time.sleep(1)
     clear_terminal()
     view_fixture(group_input)
 
@@ -213,11 +224,13 @@ def view_quiz_instruction():
 
         if validate_input(user_input):
             print("Redirecting...")
+            time.sleep(1)
             clear_terminal()
             break
 
     if user_input == "s":
         print("\nLoading the quiz...")
+        time.sleep(1)
         clear_terminal()
         view_trivia_quiz()
 
@@ -244,6 +257,7 @@ def view_trivia_quiz():
         else:
             red_colored("\nIncorrect.\n")
             incorrect += 1
+    time.sleep(2)
     green_colored(f'{correct} correct answers.')
     red_colored(f'{incorrect} incorrect answers.')
     print()
@@ -261,7 +275,7 @@ def name_input():
         if not name:
             raise ValueError
         else:
-            cyan_colored(f'Hello {name}, and welcome!\n')
+            cyan_colored(f'\nHello {name}, and welcome!\n')
     except ValueError:
         print('Please enter a valid name')
         name_input()
@@ -272,8 +286,10 @@ def main():
     Runs all functions
     '''
     show_opening_title()
-    cyan_colored("\nThe first ever Winter World Cup Is Coming..\n")
+    cyan_colored("\n\nThe first ever Winter World Cup Is Coming..\n")
     name_input()
+    print("Loading...")
+    time.sleep(1)
     clear_terminal()
     show_menu()
 
