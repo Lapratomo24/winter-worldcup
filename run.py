@@ -21,7 +21,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('winter_world_cup')
 
-GROUP_FIXTURES = ["a", "b", "c", "d", "e", "f", "g", "h"]
+groups = ["a", "b", "c", "d", "e", "f", "g", "h"]
 leaderboard = SHEET.worksheet('leaderboard')
 venues = SHEET.worksheet('venues')
 
@@ -55,8 +55,9 @@ def show_menu():
     while True:
         cyan_colored("Please choose one of the options:\n")
         print("\n(a) World Cup Venues\n")
-        print("(b) World Cup Groups & Fixtures\n")
-        print("(c) World Cup Trivia Quiz\n")
+        print("(b) World Cup National Teams\n")
+        print("(c) World Cup Fixtures\n")
+        print("(d) World Cup Trivia Quiz\n")
         user_input = input("")
 
         if validate_input(user_input):
@@ -71,10 +72,14 @@ def show_menu():
         clear_terminal()
         view_venues()
     if user_input == ("b"):
+        print("Taking you to the list of qualified national teams...")
+        clear_terminal()
+        view_groups()
+    if user_input == ("c"):
         print("Taking you to the upcoming fixtures of FIFA World Cup 2022...")
         clear_terminal()
         view_fixtures_to_pick()
-    if user_input == ("c"):
+    if user_input == ("d"):
         print("Ready to put your knowledge to the test?")
         clear_terminal()
         view_quiz_instruction()
@@ -126,17 +131,50 @@ def view_venues():
     return_to_menu()
 
 
+def view_groups():
+    '''
+    Displays all group participating in World Cup 2022
+    '''
+    while True:
+        cyan_colored("\nPlease choose from one of the groups:\n")
+        for group in groups:
+            print("(" + group + ") Group " + group.upper())
+
+        group_input = input("").lower()
+        if group_input not in groups:
+            red_colored("Invalid input. Choose from one of the options.")
+        else:
+            break
+
+    clear_terminal()
+    print("\nNow loading...\n")
+    print("Taking you to Group " + group_input.upper() + "...")
+    clear_terminal()
+    view_group_info(group_input)
+
+
+def view_group_info(group_name):
+    '''
+    Displays group fixtures from worksheet
+    '''
+    group_sheet = SHEET.worksheet('group_' + group_name)
+    display_group = group_sheet.get_all_values()
+    print(tabulate(display_group, headers="firstrow", tablefmt="github"))
+    print()
+    return_to_menu()
+
+
 def view_fixtures_to_pick():
     '''
     Displays all group fixtures for World Cup 2022
     '''
     while True:
         cyan_colored("\nPlease choose from one of the groups:\n")
-        for group in GROUP_FIXTURES:
+        for group in groups:
             print("(" + group + ") Group " + group.upper())
 
         group_input = input("").lower()
-        if group_input not in GROUP_FIXTURES:
+        if group_input not in groups:
             red_colored("Invalid input. Choose from one of the options.")
         else:
             break
@@ -170,7 +208,7 @@ def view_quiz_instruction():
     print("There are 10 questions for you to answer.\n".center(80))
     print("You get 10 points for each correct answer.\n\n".center(80))
     while True:
-        print("Press s to start when you're ready, and Good Luck!\n".center(80))
+        print("Press s to start when you're ready. Good Luck!\n".center(80))
         user_input = input(''.center(40))
 
         if validate_input(user_input):
