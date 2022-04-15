@@ -53,22 +53,12 @@ def closing_message():
 ░█░ █ █▄▄ █▄▄   █░▀█ ██▄ █░█ ░█░   ░█░ █ █░▀░█ ██▄ ▄'''
     print('\n'.join(title.center(80) for title in title.splitlines()))
     print()
-    ball = '''
-            _...----.._
-     ,:':::::.     `>.
-   ,' |:::::;'     |:::.
-  /    `'::'       :::::\
- /         _____     `::;\
-:         /:::::\      `  :
-| ,.     /::SSt::\        |
-|;:::.   `::::::;'        |
-::::::     `::;'      ,.  ;
- \:::'              ,::::/
-  \                 \:::/
-   `.     ,:.        :;'
-     `-.::::::..  _.''
-        ```----```'''
-    print('\n'.join(ball.center(80) for ball in ball.splitlines()))
+    football = '''
+                        ___
+o__        o__     |   |\\
+/|          /\      |   |X\\
+/ > o        <\     |   |XX\\'''
+    print('\n'.join(football.center(80) for football in football.splitlines()))
         
 
 def venues_header():

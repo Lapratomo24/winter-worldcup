@@ -55,9 +55,8 @@ def shut_down():
     '''
     Shuts down the terminal
     '''
-    print(4*"\n")
+    print(2*"\n")
     closing_message()
-    time.sleep(2)
     sys.exit()
 
 
@@ -316,7 +315,7 @@ def name_input():
     Takes user name input
     '''
     try:
-        print("Type in your name then press Enter:\n".center(80))
+        print("Type in your name then press enter:\n".center(80))
         name = input("".center(37))
         if not name:
             raise ValueError
