@@ -1,12 +1,13 @@
 import random
 import time
 import os
+import sys
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
 from colorama import Fore
 
-from strings import show_opening_title, leaderboard_message
+from strings import show_opening_title, leaderboard_message, show_closing_message
 from strings import venues_header, group_header, fixture_header
 from strings import cyan_colored, red_colored, green_colored, quiz_header
 from quiz import Trivia, trivia_quizzes
@@ -48,6 +49,16 @@ def clear_terminal():
     Clears the terminal
     '''
     os.system('clear')
+
+
+def shut_down():
+    '''
+    Shuts down the terminal
+    '''
+    print(4*"\n")
+    show_closing_message()
+    time.sleep(2)
+    sys.exit()
 
 
 def show_menu():
@@ -97,20 +108,22 @@ def return_to_menu():
     Displays the option to navigate back to main menu
     '''
     while True:
-        print("\nPress m then enter to return to main menu\n")
+        print("\nPress m then enter to return to main menu.\n")
+        print("Press e then enter to exit the terminal.\n")
         user_input = input('')
 
         if validate_input(user_input):
-            print("\nRedirecting you back to main menu...")
+            print("\nNow loading...")
             time.sleep(1)
             clear_terminal()
             break
 
     if user_input == "m":
-        print("\nNow loading...")
         time.sleep(1)
         clear_terminal()
         show_menu()
+    elif user_input == "e":
+        shut_down()
 
 
 def validate_input(input_value):
@@ -121,7 +134,7 @@ def validate_input(input_value):
     input_value = input_value.lower()
     try:
         [value for value in input_value]
-        if input_value not in {"a", "b", "c", "d", "m", "s"}:
+        if input_value not in {"a", "b", "c", "d", "e", "m", "s"}:
             raise ValueError("Please try again")
     except ValueError as e:
         print(Fore.RED + f'\nInvalid input: {e}.\n')
@@ -297,7 +310,7 @@ def name_input():
     Takes user name input
     '''
     try:
-        print("Type in your name then press Enter:\n\n".center(80))
+        print("Type in your name then press Enter:\n".center(80))
         name = input("".center(35))
         if not name:
             raise ValueError
@@ -316,6 +329,7 @@ def main():
     show_opening_title()
     print(2*"\n")
     cyan_colored("The first ever Winter World Cup is coming!".center(80))
+    cyan_colored("Hope you're as excited to watch the games as I am!".center(80))
     print(2*"\n")
     name_input()
     print("Loading...".center(80))
