@@ -21,6 +21,16 @@ This project is exclusively backend-focused. The project runs on a command line 
 
 I installed the Colorama module in order to produce appealing texts as it provides a simple cross-platform API to print colored terminal text from Python applications. And as mentioned previously, I also rely on ascii arts and texts for the purpose of visual appeal.
 
+## Flowchart & Data Model
+
+Draw.io is used to plan out the content of the application. The following is the final version:
+
+![Flowchart](readme_images/flowchart.png)
+
+As per instructed in the tutorial, I use Google Sheets to store my application data. There are eighteen worksheets in total which are comprised of eight sheets for groups, eight sheets for fixtures, as well as one sheet for venue and leaderboard each. The latter will constantly update with new rows Whenever users take part in the trivia quiz and input their name at the end.
+
+![Gsheets](readme_images/gsheets.png)
+
 ## Features
 
 ### Initial Startup
@@ -215,6 +225,7 @@ For this Python-focused project, manual testing has exclusively been done throug
 - [Heroku](https://dashboard.heroku.com/) - Provides deployment and hosting of the application.
 - [Google Sheets](https://www.google.com/sheets/about/) - Provides data storage in a table format.
 - [Google Cloud Platform](https://console.cloud.google.com/) - Provides connection between gsheets and gitpod through json.
+- [Draw.io](https://app.diagrams.net/) - Used to create flowchart.
 
 ## Packages
 - [random](https://www.tutorialsteacher.com/python/random-module) - Pseudo-random number generators for the trivia quiz.
