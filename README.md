@@ -133,7 +133,7 @@ Option E, or wherever users encounter the yellow message to press e, simply take
 
 - Truth be told, I'm not quite sure whether this classifies as a bug since I'm also not very knowledgeable yet in this matter. At the end of the project, I came to be interested in installing and importing pandas to sort the leaderboard table in a descending order by value (score column). I must have missed something as I was not able to make it work in the end. I'll improve my understanding of pandas for future projects.
 
-- During the creation of this project, I found out that center alignment and colorama module do not work on f-string texts that are preceded or followed by \n which is used to create a new line above or below. Hence why I ended up using print() for these specific parts of my code.
+- During the creation of this project, I found out that center alignment and colorama module do not work on string and f-string texts that are preceded or followed by \n (either former or latter) which is used to create a new line above or below. Hence why I ended up using print() for these specific parts of my code.
 
 ## Testing
 

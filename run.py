@@ -79,7 +79,7 @@ def show_menu():
         print()
         user_input = input("".center(39))
 
-        if validate_input(user_input):
+        if validate_input_menu(user_input):
             print()
             print("Redirecting...".center(80))
             time.sleep(1)
@@ -120,7 +120,7 @@ def return_to_menu():
         yellow_colored("Press e then enter to exit the terminal.\n")
         user_input = input('')
 
-        if validate_input(user_input):
+        if validate_input_submenu(user_input):
             print("\nNow loading...")
             time.sleep(1)
             clear_terminal()
@@ -134,14 +134,32 @@ def return_to_menu():
         shut_down()
 
 
-def validate_input(input_value):
+def validate_input_menu(input_value):
     """
     Validates user input,
     which otherwise raises Error
     """
     input_value = input_value.lower()
     try:
-        if input_value not in {"a", "b", "c", "d", "e", "m", "s"}:
+        if input_value not in {"a", "b", "c", "d", "e"}:
+            raise ValueError("Please try again")
+    except ValueError as e:
+        print()
+        print(Fore.RED + f'Invalid input: {e}.'.center(80))
+        print('\033[39m')
+        return False
+
+    return True
+
+
+def validate_input_submenu(input_value):
+    """
+    Validates user input,
+    which otherwise raises Error
+    """
+    input_value = input_value.lower()
+    try:
+        if input_value not in {"e", "m"}:
             raise ValueError("Please try again")
     except ValueError as e:
         print()
@@ -250,22 +268,18 @@ def view_quiz_instruction():
     print("Let's test your knowledge for a bit, shall we? ;)\n\n".center(80))
     cyan_colored("There are 10 questions for you to answer.\n".center(80))
     cyan_colored("You get 10 points for each correct answer.\n\n".center(80))
+    print("Press s to start when you're ready. Good Luck!\n".center(80))
     while True:
-        print("Press s to start when you're ready. Good Luck!\n".center(80))
         user_input = input(''.center(37))
-
-        if validate_input(user_input):
+        if user_input not in {"s"}:
             print()
-            print("Redirecting...".center(80))
-            time.sleep(1)
+            red_colored("Press s then enter to start the quiz\n".center(80))
+        else:
+            print()
+            print("Loading quiz...".center(80))
+            time.sleep(2)
             clear_terminal()
-            break
-
-    if user_input == "s":
-        print("Loading the quiz...")
-        time.sleep(1)
-        clear_terminal()
-        view_trivia_quiz()
+            view_trivia_quiz()
 
 
 def view_trivia_quiz():
