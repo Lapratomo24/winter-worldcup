@@ -166,14 +166,14 @@ For this Python-focused project, manual testing has exclusively been done throug
 
 3. Venues
 - Verify that ascii text is displayed properly.
-- Verify that all values from gsheet venues table are displayed on the terminal.
+- Verify that all values from gsheets venues table are displayed on the terminal.
 - Verify that pressing m will take users back to main menu.
 - Verify that pressing e will result in exiting the terminal.
 
 4. National Teams
 - Verify that choosing an option on the options page will take users to the respective groups.
 - Verify that ascii text is displayed properly.
-- Verify that all values from gsheet group table are displayed on the terminal.
+- Verify that all values from gsheets group table are displayed on the terminal.
 - Verify that pressing m will take users back to main menu.
 - Verify that pressing e will result in exiting the terminal.
 
@@ -199,6 +199,26 @@ For this Python-focused project, manual testing has exclusively been done throug
 
 7. Exit
 - Verify that ascii text and art are displayed as intended.
+
+## Technologies
+
+- Python - Provides the content and structure the terminal.
+- PEP8 Online - Python validation service.
+- Gitpod - An integrated development environment to create and develop projects from scratch.
+- Github - Provides storage for codes and acts as a host to deploy live projects.
+- Heroku - Provides deployment and hosting of the application.
+- Google Sheets - Provides data storage in a table format.
+- Google Cloud Platform - Provides connection between gsheets and gitpod through json.
+
+## Packages
+- random - Pseudo-random number generators for the trivia quiz.
+- time.sleep - Suspends execution of the current thread for a given number of seconds.
+- os - Used to interact with the operating system, in this case to clear the terminal
+- sys - Used to manipulate Python runtime environment, in this case to exit ther terminal.
+- gspread - Python API for Google Sheets
+- tabulate - Pretty-prints tabular data in the terminal
+- colorama - Provides color to texts in the terminal
+
 
 -----
 Happy coding!
