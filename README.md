@@ -233,7 +233,24 @@ For this third milestone project, Heroku is used for the deployment of the appli
 8. Connect to GitHub by clicking the Search button and choosing the correct repository.
 9. You can now choose between Enable Automatic Deploys or manually deploy the application via Deploy Branch. After Heroku finishes building the application, you can click the View button to launch and run your terminal on a new tab.
 
+## Credits
 
+### Code
+
+- Code Institute's own tutorial project Love Sandwich is used as a guidance.
+- Python's [Docs Site](https://docs.python.org/) is very informative and insightful for the creation of this project.
+- I spent a good chunk of time to delve deeper with Python via [CodeCademy](https://www.codecademy.com/learn).
+
+### Content
+
+- [fsymbols](https://fsymbols.com/) for the creation of ascii text
+- [asciiart](https://www.asciiart.eu/sports-and-outdoors/soccer) for the ascii art displayed when users exit the terminal.
+
+### Acknowledgements
+
+I would like to thank my mentor [Akshat Garg](https://www.linkedin.com/in/akshatnitd/) for his support throughout my third milestone project, especially with how to properly refactor my code for clarity and readability. I also give my thanks to Code Institute for the prototype project Love Sandwich. And lastly, I am grateful to the Slack Community for the helpful review of my website.
+
+See you in the fourth milestone project!
 
 
 -----
