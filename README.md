@@ -1,31 +1,16 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Winter World Cup
 
-Welcome Lapratomo24,
+FIFA World Cup 2022 is just months away and all of us fans of the beautiful game couldn't be more excited! 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+To celebrate the upcoming first ever Winter World Cup, I think it's appropriate to create a simple application through Python that users can tinker with to obtain information about the quadrennial tournament. Moreover, they can also take part in a simple trivia quiz that tests their knowledge of the World Cup.
 
-## Reminders
+The creation of this application is intended to showcase the application of Python in a real-world context. 
+Heroku is used to deploy the application on a webpage.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+[Go to application](https://winter-world-cup.herokuapp.com/)
 
-## Creating the Heroku app
+![Application](readme_images/application.png)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
 -----
 Happy coding!
