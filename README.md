@@ -11,6 +11,16 @@ Heroku is used to deploy the application on a webpage.
 
 ![Application](readme_images/application.png)
 
+## Objective
+
+The application is intended to provide and display information to users with regard to FIFA World Cup 2022. The application stores data regarding the venues, or stadiums, that matches are going to take place at. Users can also obtain information with regard to national teams participating in the tournament by way of their respective groups. Moreover, users can remind themselves of upcoming match schedules through fixtures data that can be observed within the application. Last but not least, a simple test of World Cup knowledge should provide a bit of a fun challenge to all.
+
+## Structure & Design
+
+This project is exclusively backend-focused. The project runs on a command line interface, or as Mac users call it, a Terminal. The most important part of the design is to make the texts, including ascii header texts and arts, clearly visible and readable for users. This should be done through proper text alignment and spacing. I decided to center-position some text and header elements for visual clarity, while also maintaining other elements in their natural left-aligned positions. 
+
+I installed the Colorama module in order to produce appealing texts as it provides a simple cross-platform API to print colored terminal text from Python applications. And as mentioned previously, I also rely on ascii arts and texts for the purpose of visual appeal.
+
 
 -----
 Happy coding!
