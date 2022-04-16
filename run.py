@@ -56,7 +56,7 @@ def shut_down():
     '''
     Shuts down the terminal
     '''
-    print(2*"\n")
+    print(3*"\n")
     closing_message()
     sys.exit()
 
@@ -262,7 +262,7 @@ def view_quiz_instruction():
             break
 
     if user_input == "s":
-        print("\nLoading the quiz...")
+        print("Loading the quiz...")
         time.sleep(1)
         clear_terminal()
         view_trivia_quiz()

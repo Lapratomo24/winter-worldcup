@@ -129,9 +129,76 @@ Option E, or wherever users encounter the yellow message to press e, simply take
 ![Exit](readme_images/exit.png)
 </details><br />
 
+## Testing
 
+### PEP8 Testing
 
+I can confirm that run.py, quiz.py, and strings.py have all been through thorough PEP8 Testing.
 
+<details><summary><b>PEP8 Run.py</b></summary>
+
+![PEP8 Run.py](readme_images/pep8_run.png)
+</details><br />
+
+<details><summary><b>PEP8 Quiz.py</b></summary>
+
+![PEP8 Quiz.py](readme_images/pep8_quiz.png)
+</details><br />
+
+<details><summary><b>PEP8 Strings.py</b></summary>
+
+![PEP8 Strings.py](readme_images/pep8_strings.png)
+</details><br />
+
+### Manual Testing
+
+For this Python-focused project, manual testing has exclusively been done through the Terminal. Naturally, I have gone through uncountable amount of "Run Program" clicks throughout the testing phase. I can confirm that the following have been tried and tested properly:
+
+1. Initial Startup
+- Verify that ascii text is displayed properly.
+- Verify that validate_input works as intended.
+- Verify that pressing enter after name input takes users to the main menu.
+
+2. Main Menu
+- Verify that ascii text is displayed properly.
+- Verify that an invalid input notification pops up if the input is incorrect.
+- Verify that options a - e work as intended and bring users to their respective pages.
+
+3. Venues
+- Verify that ascii text is displayed properly.
+- Verify that all values from gsheet venues table are displayed on the terminal.
+- Verify that pressing m will take users back to main menu.
+- Verify that pressing e will result in exiting the terminal.
+
+4. National Teams
+- Verify that choosing an option on the options page will take users to the respective groups.
+- Verify that ascii text is displayed properly.
+- Verify that all values from gsheet group table are displayed on the terminal.
+- Verify that pressing m will take users back to main menu.
+- Verify that pressing e will result in exiting the terminal.
+
+5. Fixtures
+- Verify that choosing an option on the options page will take users to the respective groups.
+- Verify that ascii text is displayed properly.
+- Verify that all values from gsheet fixture table are displayed on the terminal.
+- Verify that pressing m will take users back to main menu.
+- Verify that pressing e will result in exiting the terminal.
+
+6. Trivia Quiz
+- Verify that ascii text is displayed properly.
+- Verify that validate_input works as intended.
+- Verify that pressing s then enter takes users to the questions page.
+- Verify that all ten questions pop up one after another.
+- Verify that the correct or incorrect notification pops up after each answer.
+- Verify that total score notification is displayed after the end of the quiz.
+- Verify that users get redirected to leaderboard page after name input.
+- Verify that ascii text on leaderboard page is displayed properly.
+- Verify that leaderboard updates constantly after users take the quiz.
+- Verify that pressing m will take users back to main menu.
+- Verify that pressing e will result in exiting the terminal.
+
+7. Exit
+- Verify that ascii text and art are displayed as intended.
 
 -----
 Happy coding!

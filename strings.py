@@ -7,7 +7,6 @@ def opening_title():
     Displays opening title to the terminal
     '''
     title = '''
-    
 ─╔═╗─╔═╗─────────────╔╗──╔╗──────────╔═══╦═══╦═══╦═══╗
 ─║╔╝─║╔╝─────────────║║──║║──────────║╔═╗║╔═╗║╔═╗║╔═╗║
 ╔╝╚╦╦╝╚╦══╗╔╗╔╗╔╦══╦═╣║╔═╝║╔══╦╗╔╦══╗╚╝╔╝║║║║╠╝╔╝╠╝╔╝║
@@ -35,7 +34,6 @@ def leaderboard_message():
     Display message above leaderboard
     '''
     print('''
-    
 ╔╗╔╗──────╔╗╔═╗╔═╗───────────╔╗╔╗─╔╗────╔╗╔╗────╔╗
 ║╚╣╚╦═╗╔═╦╣╠╣═╣║═╬═╦╦╗╔═╦═╗╔╦╣╚╬╬═╬╬═╦═╗║╚╬╬═╦╦═╣║
 ║╔╣║║╬╚╣║║║═╬═║║╔╣╬║╔╝║╬║╬╚╣╔╣╔╣║═╣║╬║╬╚╣╔╣║║║║╬║║
@@ -48,7 +46,6 @@ def closing_message():
     Displays closing remark with a soccer ball art
     '''
     title = '''
-    
 ▀█▀ █ █░░ █░░   █▄░█ █▀▀ ▀▄▀ ▀█▀   ▀█▀ █ █▀▄▀█ █▀▀ █
 ░█░ █ █▄▄ █▄▄   █░▀█ ██▄ █░█ ░█░   ░█░ █ █░▀░█ ██▄ ▄'''
     print('\n'.join(title.center(80) for title in title.splitlines()))
@@ -59,7 +56,7 @@ o__        o__     |   |\\
 /|          /\      |   |X\\
 / > o        <\     |   |XX\\'''
     print('\n'.join(football.center(80) for football in football.splitlines()))
-        
+
 
 def venues_header():
     '''
