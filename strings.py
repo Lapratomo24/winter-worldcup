@@ -118,5 +118,13 @@ def red_colored(text):
     '''
     Prints text in red
     '''
-    colored = f"\033[31m{text}\033[0m"
+    colored = f"\033[31m;1m{text}\033[0m"
+    print(colored)
+
+
+def yellow_colored(text):
+    '''
+    Prints text in yellow
+    '''
+    colored = f"\033[33m;1m{text}\033[0m"
     print(colored)

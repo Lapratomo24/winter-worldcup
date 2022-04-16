@@ -21,6 +21,22 @@ This project is exclusively backend-focused. The project runs on a command line 
 
 I installed the Colorama module in order to produce appealing texts as it provides a simple cross-platform API to print colored terminal text from Python applications. And as mentioned previously, I also rely on ascii arts and texts for the purpose of visual appeal.
 
+# Features
+
+### Initial Startup
+
+As seen below, users will be greeted by an ascii text of FIFA World Cup 2022 which is followed by two lines of message. Directly below them, users should enter their name (can be anything, really) in order to use the application. A short welcome message greets the users, and the terminal loads to the main menu.
+
+<details><summary><b>Initial Startup</b></summary>
+
+![Initial Startup](readme_images/welcome.png)
+</details><br />
+
+
+
+### Main Menu
+
+
 
 -----
 Happy coding!

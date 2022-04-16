@@ -9,7 +9,8 @@ from colorama import Fore
 
 from strings import opening_title, leaderboard_message, closing_message
 from strings import venues_header, group_header, fixture_header, menu_header
-from strings import cyan_colored, red_colored, green_colored, quiz_header
+from strings import cyan_colored, red_colored, green_colored
+from strings import yellow_colored, quiz_header
 from quiz import Trivia, trivia_quizzes
 
 
@@ -113,7 +114,7 @@ def return_to_menu():
     '''
     while True:
         cyan_colored("\nPress m then enter to return to main menu.\n")
-        red_colored("Press e then enter to exit the terminal.\n")
+        yellow_colored("Press e then enter to exit the terminal.\n")
         user_input = input('')
 
         if validate_input(user_input):
@@ -140,7 +141,8 @@ def validate_input(input_value):
         if input_value not in {"a", "b", "c", "d", "e", "m", "s"}:
             raise ValueError("Please try again")
     except ValueError as e:
-        print(Fore.RED + f'\nInvalid input: {e}.\n')
+        print()
+        print(Fore.RED + f'Invalid input: {e}.'.center(80))
         print('\033[39m')
         return False
 
@@ -316,7 +318,7 @@ def name_input():
     '''
     try:
         print("Type in your name then press enter:\n".center(80))
-        name = input("".center(37))
+        name = input("".center(35))
         if not name:
             raise ValueError
         else:
