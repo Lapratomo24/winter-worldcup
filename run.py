@@ -66,6 +66,7 @@ def show_menu():
     Displays main menu to the user
     '''
     while True:
+        print()
         menu_header()
         print()
         cyan_colored("Please choose one of the options:\n".center(80))
@@ -297,8 +298,8 @@ def view_trivia_quiz():
     print("\nEnter your name to see it on the leaderboard:\n")
     name = input("")
     time.sleep(1)
-    leaderboard.append_row(values=[name, correct, incorrect, score])
     clear_terminal()
+    leaderboard.append_row(values=[name, correct, incorrect, score])
     view_leaderboard()
 
 
