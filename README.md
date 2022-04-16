@@ -202,22 +202,38 @@ For this Python-focused project, manual testing has exclusively been done throug
 
 ## Technologies
 
-- Python - Provides the content and structure the terminal.
-- PEP8 Online - Python validation service.
-- Gitpod - An integrated development environment to create and develop projects from scratch.
-- Github - Provides storage for codes and acts as a host to deploy live projects.
-- Heroku - Provides deployment and hosting of the application.
-- Google Sheets - Provides data storage in a table format.
-- Google Cloud Platform - Provides connection between gsheets and gitpod through json.
+- [Python](https://www.python.org/) - Provides the content and structure the terminal.
+- [PEP8 Online](http://pep8online.com/) - Python validation service.
+- [Gitpod](https://gitpod.io/) - An integrated development environment to create and develop projects from scratch.
+- [Github](https://github.com/) - Provides storage for codes and acts as a host to deploy live projects.
+- [Heroku](https://dashboard.heroku.com/) - Provides deployment and hosting of the application.
+- [Google Sheets](https://www.google.com/sheets/about/) - Provides data storage in a table format.
+- [Google Cloud Platform](https://console.cloud.google.com/) - Provides connection between gsheets and gitpod through json.
 
 ## Packages
-- random - Pseudo-random number generators for the trivia quiz.
-- time.sleep - Suspends execution of the current thread for a given number of seconds.
-- os - Used to interact with the operating system, in this case to clear the terminal
-- sys - Used to manipulate Python runtime environment, in this case to exit ther terminal.
-- gspread - Python API for Google Sheets
-- tabulate - Pretty-prints tabular data in the terminal
-- colorama - Provides color to texts in the terminal
+- [random](https://www.tutorialsteacher.com/python/random-module) - Pseudo-random number generators for the trivia quiz.
+- [time.sleep](https://www.programiz.com/python-programming/time/sleep) - Suspends execution of the current thread for a given number of seconds.
+- [os](https://www.tutorialsteacher.com/python/os-module) - Used to interact with the operating system, in this case to clear the terminal
+- [sys](https://www.tutorialsteacher.com/python/sys-module) - Used to manipulate Python runtime environment, in this case to exit ther terminal.
+- [gspread](https://pypi.org/project/gspread/) - Python API for Google Sheets
+- [tabulate](https://pypi.org/project/tabulate/) - Pretty-prints tabular data in the terminal
+- [colorama](https://pypi.org/project/colorama/) - Provides color to texts in the terminal
+
+## Deployment
+
+For this third milestone project, Heroku is used for the deployment of the application as opposed to GitHub.
+
+1. After logging in, click the New button on the top right.
+2. From the dropdown, click Create new app.
+3. Type in a relevant name, choose your region, thne click Create app button.
+4. Ignore the Deploy tab for the moment and click Settings tab.
+5. Scroll down to and click Config Vars button, whereby you'll add "Port" in the Key field and "8000" in the Value field.
+6. Below Config Vars, click Add buildpack button, whereby you'll add Python and then Node.js in that specific order.
+7. Now go back to Deploy tab and choose GitHub as your Deployment method.
+8. Connect to GitHub by clicking the Search button and choosing the correct repository.
+9. You can now choose between Enable Automatic Deploys or manually deploy the application via Deploy Branch. After Heroku finishes building the application, you can click the View button to launch and run your terminal on a new tab.
+
+
 
 
 -----
