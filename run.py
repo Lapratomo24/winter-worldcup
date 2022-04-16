@@ -68,17 +68,19 @@ def show_menu():
     while True:
         menu_header()
         print()
-        cyan_colored("Please choose one of the options:\n")
-        print("\n(a) World Cup Venues\n")
-        print("(b) World Cup National Teams\n")
-        print("(c) World Cup Fixtures\n")
-        print("(d) World Cup Trivia Quiz\n")
-        print("(e) Exit\n")
-        user_input = input("")
+        cyan_colored("Please choose one of the options:\n".center(80))
+        print()
+        print("(a) World Cup Venues\n".center(80))
+        print("(b) World Cup National Teams\n".center(80))
+        print("(c) World Cup Fixtures\n".center(80))
+        print("(d) World Cup Trivia Quiz\n".center(80))
+        print("(e) Exit".center(80))
+        print()
+        user_input = input("".center(39))
 
         if validate_input(user_input):
             print()
-            print("Redirecting...")
+            print("Redirecting...".center(80))
             time.sleep(1)
             clear_terminal()
             break
@@ -318,7 +320,7 @@ def name_input():
     '''
     try:
         print("Type in your name then press enter:\n".center(80))
-        name = input("".center(35))
+        name = input("".center(37))
         if not name:
             raise ValueError
         else:
