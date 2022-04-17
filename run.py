@@ -313,6 +313,7 @@ def view_trivia_quiz():
             red_colored("\nIncorrect.\n")
             incorrect += 1
     time.sleep(2)
+    clear_terminal()
     green_colored(f'{correct} correct answers.')
     red_colored(f'{incorrect} incorrect answers.')
     print()
