@@ -42,6 +42,14 @@ quiz_list = [
     Trivia(trivia_quizzes[9], "a"),
     Trivia(trivia_quizzes[10], "b"),
     Trivia(trivia_quizzes[11], "a"),
+    Trivia(trivia_quizzes[12], "b"),
+    Trivia(trivia_quizzes[13], "c"),
+    Trivia(trivia_quizzes[14], "a"),
+    Trivia(trivia_quizzes[15], "a"),
+    Trivia(trivia_quizzes[16], "b"),
+    Trivia(trivia_quizzes[17], "c"),
+    Trivia(trivia_quizzes[18], "b"),
+    Trivia(trivia_quizzes[19], "b"),
 ]
 
 

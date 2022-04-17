@@ -62,7 +62,7 @@ trivia_quizzes = [
      (b) December - January\n \
      (c) October - November\n",
 
-    "The reigning World Champions are ...?\n \
+    "The reigning World Champions are...?\n \
      (a) Germany\n \
      (b) France\n \
      (c) Italy\n",
@@ -71,4 +71,47 @@ trivia_quizzes = [
      (a) Miroslav Klose\n \
      (b) Diego Maradona\n \
      (c) Pele\n",
+
+    "Which player received the Golden Ball Award for the FIFA World Cup 2014?\n \
+     (a) Thomas Müller\n \
+     (b) Lionel Messi\n \
+     (c) Andrés Iniesta\n",
+
+    "Which artist sang the official World Cup 2010 song Waka Waka?\n \
+     (a) Jennifer Lopez\n \
+     (b) Beyoncé\n \
+     (c) Shakira\n",
+
+    "When was the last time the England national team lifted the "
+    "World Cup trophy?\n \
+     (a) 1966\n \
+     (b) 2002\n \
+     (c) 1998\n",
+
+    "The following are the new official sponsors for the "
+    "FIFA World Cup 2022, except...\n \
+     (a) Pepsi\n \
+     (b) QatarEnergy\n \
+     (c) Crypto.com\n",
+
+    "Which national team did Cristiano Ronaldo score a hattrick against "
+    "in World Cup 2018?\n \
+     (a) Sweden\n \
+     (b) Spain\n \
+     (c) Germany\n",
+
+    "Which nation(s) hosted the FIFA World Cup 2002?\n \
+     (a) Germany\n \
+     (b) Brazil\n \
+     (c) Korea & Japan\n",
+
+    "Who scored the winning goal for Germany in the FIFA World Cup 2014 final?\n \
+     (a) Bastian Schweinsteiger\n \
+     (b) Mario Götze\n \
+     (c) Toni Kroos\n",
+
+    "A total of ... national teams have won the World Cup trophy.?\n \
+     (a) 10\n \
+     (b) 8\n \
+     (c) 9\n",
 ]
